@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}editpeofile{% endblock title %}
+{% block content %}
+<div>
+    <h1 class="text-center">Edit Profile</h1>
+</div>
+<form action="" method="post" class="container">
+    {% csrf_token %}
+    {% for i in form %}
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Name</span>
+        <input type="text" class="form-control" aria-label="First name" name="name" placeholder="{{i.name}}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Email</span>
+        <input type="text" class="form-control" aria-label="First name" name="email" placeholder="{{i.email}}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Phone Number</span>
+        <input type="text" class="form-control" aria-label="First name" name="phno" placeholder="{{i.phno}}">
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text bg-dark text-secondary w-25">Password</span>
+        <input type="text" class="form-control" aria-label="First name" name="Password" placeholder="{{i.Password}}">
+    </div>
+    <div class="card-footer text-muted d-flex justify-content-center">
+        <input type="submit" value="edit" class="btn btn-dark text-secondary w-25">
+    </div>
+
+
+
+
+    {% endfor %}
+</form>
+{% endblock content %}
+

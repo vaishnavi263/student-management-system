@@ -1,0 +1,62 @@
+{% extends 'mainbase.html' %} 
+{% block title %}Contact Us{% endblock %}
+{% block navs %}
+<nav class="nav">
+    <a class="nav-link active" href="{% url 'mainhome' %}">Home</a>
+    <a class="nav-link active" href="{% url 'course' %}">Course</a>
+    <a class="nav-link active" href="{% url 'gallery' %}">Gallery</a>
+    <a class="nav-link active" href="{% url 'contact' %}">Contact</a>
+</nav>
+{% endblock %}
+{% load static %}
+{% block content %}
+<div>
+    {% if out == 1%}
+    <div class="alert alert-dark container text-center col-6" role="alert" style="font-family : cursive ;">
+        hii {{name}},we will contact you later...
+</div>
+{%endif%}
+<div class="container d-flex">
+    <div class="container w-25 mr-5">
+        <h3 class="text-muted-center" style="padding-left: 550px; font-family :emoji bold ; color:blue;">CONTACT_US</h3>
+        <img src="{% static 'image/contact.jpeg' %}" class="rounded" height="60px" width="200px"><br><br>
+        <p class="text-muted" style="padding-top:15px;"><img src="{% static 'image/call.png' %}" class="rounded" height="50px" width="50px">8138043906</p>
+        <p class="text-muted" style="padding-top:15px;"><img src="{% static 'image/email.png' %}" class="rounded" height="50px" width="50px">crossroads@gmail.com</p>
+        <br>
+        <p class="text-muted" style="padding-top:15px;"><img src="{% static 'image/whtp.jpeg' %}" class="rounded" height="50px" width="50px">8138043906</p>
+        <p class="text-muted" style="padding-top:15px;"><img src="{% static 'image/map.jpeg' %}" class="rounded" height="50px" width="50px">crossroads@gmail.com</p>
+        <p style="padding-top: 100px;"></p>
+    </div> 
+    <div claass = "container ml-5" style="width:55rem;">
+        <br><br>
+        <div class="d-flex justify-content-center" style="font-family : cursive ;">
+            <p>if you have any clarification please contact us..</p></div><br>
+            <form action ="" method ="POST">
+                {% csrf_token %}
+        <div class="row mb-3">
+            <label for="name" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+             <input type="text" class="form-control" id="name" name="name">   
+        </div>
+    </div>   
+    <div class="row mb-3">
+        <label for="name" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" id="email" name="email">   
+    </div>      
+    <div class="row mb-3">
+        <label for="name" class="col-sm-2 col-form-label">Phone Number</label>
+        <div class="col-sm-10">
+        <input type="text" class="form-control" id="phno" name="phno">   
+    </div>   
+</div>
+<br>  <br>
+<div class="d-flex justify-content-center">
+    <button class="btn btn-info" type="submit" style="background-color:gray;">submit</button>
+</div>
+
+    
+
+</div>
+</div>
+{% endblock content %}
